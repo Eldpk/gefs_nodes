@@ -105,7 +105,7 @@ def train_som(preferences):
 
     scaled_npy = scaler.transform(npy)
 
-    preferences['som_config']['input_len'] = 2 * ds.sizes['lon'] * ds.sizes['lat']
+    preferences['som_config']['input_len'] = len(preferences['vars']) * ds.sizes['lon'] * ds.sizes['lat']
     preferences['som_train']['data'] = scaled_npy
     
     print("current model configuration")
